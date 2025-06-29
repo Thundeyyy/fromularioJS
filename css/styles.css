@@ -4,18 +4,18 @@
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
-    color: #ffffff;
+    color: #000000;
     
 }
 
 html, body {
-    font-family: linux-libertine;
+    font-family: sans-serif;
     display: flex;
     flex-direction: column;
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #101418;
+    background-color: #ffffff;
 }
 
 .cajadetexto h3 {
@@ -31,7 +31,7 @@ html, body {
     margin-bottom: 20px;
 }
 .cajadetexto ul li {
-    background-color: #1a1a1c88;
+    background-color: #ffffff88;
     border: 1px solid #4f4f4f;
     padding: 12px 20px;
     margin-bottom: 10px;
@@ -57,13 +57,19 @@ main {
     justify-content: center;
 }
 
+
+/* ---- MENU ---- */
+
 .navbar {
+    position: relative;
     display: flex;
     justify-content: space-between;
-    background-color: #000000;
+    background-color: #0E1C2C;
     color: #ffffff;
-    height: 80px;
+    height: 60px;
     width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.359);
+    z-index: 4;
 }
 
 nav ul {
@@ -73,20 +79,26 @@ nav ul {
 
 nav ul li {
     display: inline-block;
-    line-height: 80px;
+    line-height: 60px;
     margin: 0 5px;
+
+    
+}
+
+nav ul li a.active, nav ul li a:hover {
+    border-bottom: 4px solid #ffffff;
 }
 
 nav ul li a {
     color: #ffffff;
-    font-size: 17px;
-    padding: 15px 19px;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 16px 15px;
+
 }
 
-a.active, a:hover {
-    background: rgb(64, 64, 64);
-    transition: 0.5s;
-}
+
+
 
 .logo {
     display: flex;
@@ -103,6 +115,29 @@ a.active, a:hover {
     vertical-align: middle;
 }
 
+/* caja de texto de materias*/
+.materias {
+    padding: 35px 30px;
+    border-radius: 0.5px;
+    box-shadow: 0 3px 10px rgba(105, 105, 105, 0.993);
+    font-size: 18px;
+    text-align: left;
+    background-color: #0e1c2c;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.materias h1 {
+    font-size: 42px;
+    color: #ffffff;
+}
+
+.materias p {
+    font-size: 18px;
+    color: #e7e7e7c6;
+}
+
 footer {
     background-color: #000000;
     color: #ffffff;
@@ -117,7 +152,7 @@ footer {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     font-size: 18px;
     text-align: center;
-    background-color: #101418;
+    background-color: #ffffff;
     display: inline-block;
     width: 100%;
     margin: 0 auto 20px;
@@ -317,5 +352,79 @@ table th {
     table {
         font-size: 14px; 
         width: 100%;
+    }
+}
+
+/* ---- CARDS DE MATERIAS ---- */
+.cards-materias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin-top: 20px;
+}
+
+.card-materia {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    padding: 20px 24px 16px 24px;
+    min-width: 260px;
+    max-width: 300px;
+    flex: 1 1 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #e0e0e0;
+    transition: box-shadow 0.2s;
+}
+.card-materia:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.22);
+}
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 8px;
+}
+.card-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #22334a;
+    flex: 1 1 auto;
+    text-align: left;
+}
+.card-dia {
+    font-size: 1rem;
+    color: #5e7990;
+    margin-left: 8px;
+    font-weight: 600;
+}
+.card-turno {
+    font-size: 1rem;
+    color: #888;
+    margin-left: 8px;
+    font-weight: 400;
+}
+.card-body {
+    margin-top: 10px;
+    text-align: left;
+}
+.card-body div {
+    margin-bottom: 6px;
+    font-size: 1rem;
+}
+@media (max-width: 900px) {
+    .cards-materias {
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+    }
+    .card-materia {
+        max-width: 95vw;
+        min-width: 220px;
     }
 }
